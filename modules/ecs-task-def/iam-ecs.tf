@@ -56,7 +56,7 @@ resource "aws_iam_role" "ecs_task_exe_role" {
 
 resource "aws_iam_role_policy" "ecs_tasks_policy" {
   name = "${var.app_name}_ecs_tasks_policy_${terraform.workspace}"
-  role = aws_iam_role.ecs_role.id
+  role = aws_iam_role.ecs_task_exe_role.id
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.

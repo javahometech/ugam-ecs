@@ -14,4 +14,11 @@ module "ugam-s1-task" {
   vpc_id           = module.ugam-vpc.vpc_id
   cluster_id       = module.ugam-ecs.cluster_id
   target_group_arn = module.ugam-api-tg.target_group_arn
+  con_def_config = {
+    cpu = 256
+    image = "461923016741.dkr.ecr.us-east-1.amazonaws.com/nodeapp:v2"
+    memory = 512
+    name = "ugam-api"
+    port = 8080
+  }
 }
